@@ -1,0 +1,9 @@
+name: Handle issues
+on: issues
+jobs: 
+  info_issue:
+    runs-on: ubuntu-latest
+    name: OutPut GitHub Issues
+    steps:
+      - name: output_github_issue
+        run: echo "${{toJson(github)}}"
