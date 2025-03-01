@@ -1,0 +1,20 @@
+name: GitHub Deployment
+run-name: ${{github.actor}} is trigger deployment workflow
+on: [push]
+jobs:
+  Run_lint_scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Install dependency
+        run: ｜
+          npm --version
+          npm ci
+          npm run build
+          npm test
+      - name: Deploy Coding ...
+        run: echo "Deploying ..."
