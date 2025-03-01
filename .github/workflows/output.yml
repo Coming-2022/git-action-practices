@@ -6,4 +6,4 @@ jobs:
     name: OutPut GitHub Issues
     steps:
       - name: output_github_issue
-        run: echo "${{toJson(github)}}"
+        run: echo "${{ toJson(github.event) }}"
