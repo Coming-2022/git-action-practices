@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: '20.x'
       - name: Install dependency
-        run: ｜
+        run:  |
           npm --version
           npm ci
           npm run build
