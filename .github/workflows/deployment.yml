@@ -10,7 +10,7 @@ jobs:
         run:  |
           npm --version
           npm ci
-          npm audit fix
+          npm audit fix --force
           npm run lint
   Run_test_scripts:
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
         run:  |
           npm --version
           npm ci
-          npm audit fix
+          npm audit fix --force
       - name: Test Code
         run: npm run test
   Run_deploy_scripts:
