@@ -2,9 +2,11 @@ name: Events Demo 1
 on: 
   pull_request:
     types: [closed]
-  workflow_dispatch:
+    branches: [main,'dev-*']
   push: 
     branches: [main,'dev-*']
+    patchs-ignore: 
+      - '.github/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
