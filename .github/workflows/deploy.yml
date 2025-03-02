@@ -1,7 +1,7 @@
 name: Greeting on variable day
 
 on:
-  workflow_dispatch
+  push
 
 env:
   DAY_OF_WEEK: Monday
@@ -16,6 +16,7 @@ jobs:
       - name: "Say Hello Mona it's Monday"
         run: |
           echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
-          echo "DB_NAME is $${{ env.DB_NAME}}"
+          echo "DB_NAME is ${{env.DB_NAME}}"
+          echo "DB_NAME is $DB_NAME"
         env:
           First_Name: Mona
