@@ -1,25 +1,18 @@
-name: Deployment
+name: Greeting on variable day
+
 on:
-  push:
-    branches:
-      - main
-      - dev
+  workflow_dispatch
+
 env:
-    MONGODB_DB_NAME: hello-db
+  DAY_OF_WEEK: Monday
+
 jobs:
-  test:
+  greeting_job:
+    runs-on: ubuntu-latest
     env:
-      PORT: 8080
-    environment: testing
-    runs-on: ubuntu-latest
+      Greeting: Hello
     steps:
-      - name: Output information
-        run: |
-          echo "MONGODB_DB_NAME: $env.MONGODB_DB_NAME"
-          echo "PORT: $env.PORT"
-  int:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Output information
-        run: |
-          echo "PORT: $env.PORT"
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Mona
