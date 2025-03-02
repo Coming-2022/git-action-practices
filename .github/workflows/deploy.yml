@@ -15,12 +15,11 @@ jobs:
     steps:
       - name: Output information
         run: |
-          echo "MONGODB_DB_NAME: ${{env.MONGODB_DB_NAME}}"
-          echo "PORT: ${{env.PORT}}"
+          echo "MONGODB_DB_NAME: $env.MONGODB_DB_NAME"
+          echo "PORT: $env.PORT"
   int:
-    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |
-          echo "PORT: ${{env.PORT}}"
+          echo "PORT: $env.PORT"
