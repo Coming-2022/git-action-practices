@@ -5,6 +5,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
+  DB_NAME: ${{ secrets.MONGODB_USERNAME }}
 
 jobs:
   greeting_job:
@@ -13,6 +14,8 @@ jobs:
       Greeting: Hello
     steps:
       - name: "Say Hello Mona it's Monday"
-        run: echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
+        run: |
+          echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
+          echo "DB_NAME is $${{ env.DB_NAME}}"
         env:
           First_Name: Mona
