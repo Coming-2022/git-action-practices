@@ -19,6 +19,5 @@ jobs:
           echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
           echo "DB_NAME is ${{env.DB_NAME}}"
           echo "DB_NAME is $DB_NAME"
-
         env:
           First_Name: Mona
