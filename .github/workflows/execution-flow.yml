@@ -83,4 +83,4 @@ jobs:
       - name: Something wrong print
         run:  |
           echo "Deploying..."
-          echo "${{github}}"
+          echo "${{toJson(github)}}"
